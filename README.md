@@ -1,43 +1,66 @@
-# Svelte + Vite
+# 📡 Telecom Radar
 
-This template should help get you started developing with Svelte in Vite.
+[![Svelte 5](https://img.shields.io/badge/Svelte-5-ff3e00?style=for-the-badge&logo=svelte&logoColor=white)](https://svelte.dev)
+[![Vite](https://img.shields.io/badge/Vite-6.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
+[![Leaflet](https://img.shields.io/badge/Leaflet-1.9-199903?style=for-the-badge&logo=leaflet&logoColor=white)](https://leafletjs.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Architecture: SOLID](https://img.shields.io/badge/Architecture-SOLID-blue?style=for-the-badge)](./ENGINEERING_MANUAL.md)
 
-## Recommended IDE Setup
+**Telecom Radar** is a premium, high-performance telecommunications intelligence dashboard. It provides real-time visualization of cellular infrastructure (OpenCelliD) combined with a deterministic RF signal propagation simulator.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+---
 
-## Need an official Svelte framework?
+## 🚀 Key Features
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+- **Live Cell Mapping**: Dynamic fetching of cell towers based on map bounding box.
+- **RF Signal Simulator**: Real-time RSRP (Reference Signal Received Power) estimation using the Free Space Path Loss (FSPL) model.
+- **Carrier Insights**: Automated statistics for 5G, LTE, and UMTS distribution in the viewed area.
+- **Premium UX**: A dark-themed, glassmorphism-inspired interface built for engineering professional use.
+- **Clean Architecture**: Strictly decoupled domain logic, infrastructure adapters, and Svelte 5 presentation layer.
 
-## Technical considerations
+## 🏗️ Architecture (SOLID)
 
-**Why use this over SvelteKit?**
+The project follows "Clean Architecture" principles to ensure maintainability and testability:
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+- **Domain Layer**: Pure business logic and entities (`Tower`, `SignalQuality`).
+- **Infrastructure**: API Adapters (OpenCellId) and Physics Engines.
+- **Presentation**: Reactive UI components leveraging Svelte 5 Runes.
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+For a deep dive into the engineering specs, check out the [Engineering Manual](./ENGINEERING_MANUAL.md).
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+---
 
-**Why include `.vscode/extensions.json`?**
+## 🛠️ Installation & Setup
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+### Prerequisites
+- Node.js (v18+)
+- An **OpenCelliD API Key** (Get one at [opencellid.org](https://opencellid.org))
 
-**Why enable `checkJs` in the JS template?**
+### Quick Start
+1. Clone the repository and navigate to the folder.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open the app in your browser and enter your API Key in the welcome overlay.
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
+---
 
-**Why is HMR not preserving my local component state?**
+## 🛰️ Signal Physics Note
+The simulation uses a conservative **Link Budget** model assuming:
+- **Tx Power**: 43 dBm (20W)
+- **Antenna Gain**: 15 dBi
+- **Building Penetration Loss**: ~20 dB
+- **Frequencies**: Modeled based on standard 3GPP bands (900/1800/2100/3500 MHz).
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
+---
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+## 📄 License
+Distributed under the MIT License. See `LICENSE` for more information.
 
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+---
+*Developed for Telecom Systems Research & Engineering.*
