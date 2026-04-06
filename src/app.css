@@ -1,0 +1,59 @@
+:root {
+  /* Colors */
+  --bg-color: #0b0d17;
+  --bg-panel: rgba(20, 24, 41, 0.75);
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --accent-lte: #a855f7; /* Purple */
+  --accent-5g: #06b6d4;  /* Cyan */
+  --accent-3g: #3b82f6;  /* Blue */
+  --danger: #ef4444;
+  --border-color: rgba(255, 255, 255, 0.1);
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, sans-serif;
+
+  /* Effects */
+  --blur-panel: blur(12px);
+  --shadow-glow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  --radius-panel: 16px;
+  --radius-sm: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  overflow: hidden; /* Since it's a map dashboard */
+}
+
+/* Glassmorphism Panel Utility */
+.glass-panel {
+  background: var(--bg-panel);
+  backdrop-filter: var(--blur-panel);
+  -webkit-backdrop-filter: var(--blur-panel);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
