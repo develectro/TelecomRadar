@@ -1,10 +1,10 @@
 # 📡 Telecom Radar
 
-[![Svelte 5](https://img.shields.io/badge/Svelte-5-ff3e00?style=for-the-badge&logo=svelte&logoColor=white)](https://svelte.dev)
-[![Vite](https://img.shields.io/badge/Vite-6.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
-[![Leaflet](https://img.shields.io/badge/Leaflet-1.9-199903?style=for-the-badge&logo=leaflet&logoColor=white)](https://leafletjs.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![Architecture: SOLID](https://img.shields.io/badge/Architecture-SOLID-blue?style=for-the-badge)](./ENGINEERING_MANUAL.md)
+   [![Svelte 5](https://img.shields.io/badge/Svelte-5-ff3e00?style=for-the-badge&logo=svelte&logoColor=white)]      (https://svelte.dev)
+   [![Vite](https://img.shields.io/badge/Vite-6.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
+   [![Leaflet](https://img.shields.io/badge/Leaflet-1.9-199903?style=for-the-badge&logo=leaflet&logoColor=white)](https://leafletjs.com)
+   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+   [![Architecture: SOLID](https://img.shields.io/badge/Architecture-SOLID-blue?style=for-the-badge)](./ENGINEERING_MANUAL.md)
 
 **Telecom Radar** is a premium, high-performance telecommunications intelligence dashboard. It provides real-time visualization of cellular infrastructure (OpenCelliD) combined with a deterministic RF signal propagation simulator.
 
